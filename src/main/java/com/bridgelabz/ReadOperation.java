@@ -62,8 +62,8 @@ public class ReadOperation {
     }
     public boolean readHeader(String filePath, List<String> stringName)
             throws IOException, IndianStateCensusAnalyserException {
-        BufferedReader br = new BufferedReader(new FileReader(filePath));
-        String line = br.readLine();
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath));
+        String line = bufferedReader.readLine();
         String[] header = line.split(",");
         boolean flag = true;
         for (int i = 0; i < header.length && i < stringName.size(); i++) {
